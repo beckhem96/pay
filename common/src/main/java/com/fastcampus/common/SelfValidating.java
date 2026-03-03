@@ -1,4 +1,4 @@
-package common;
+package com.fastcampus.common;
 
 import javax.validation.*;
 import java.util.Set;

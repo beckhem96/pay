@@ -3,7 +3,7 @@ package com.fastcampus.membership.adapter.in.web;
 import com.fastcampus.membership.application.port.in.FindMembershipCommand;
 import com.fastcampus.membership.application.port.in.FindMembershipUseCase;
 import com.fastcampus.membership.domain.Membership;
-import common.WebAdapter;
+import com.fastcampus.common.WebAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
