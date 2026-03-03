@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @WebAdapter
 @RestController
 @RequiredArgsConstructor
-public class FIndMembershipController {
+public class FindMembershipController {
     private final FindMembershipUseCase findMembershipUseCase;
 
     @GetMapping("/membership/{membershipId}")

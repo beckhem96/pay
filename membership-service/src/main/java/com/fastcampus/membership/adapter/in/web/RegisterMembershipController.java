@@ -2,6 +2,7 @@ package com.fastcampus.membership.adapter.in.web;
 
 import com.fastcampus.membership.application.port.in.RegisterMembershipCommand;
 import com.fastcampus.membership.application.port.in.RegisterMembershipUseCase;
+import com.fastcampus.membership.domain.Membership;
 import common.WebAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class RegisterMembershipController {
     private final RegisterMembershipUseCase registerMembershipUseCase;
 
     @PostMapping("/membership/register")
-    void register(@RequestBody RegisterMembershipRequest request) {
+    com.fastcampus.membership.domain.Membership register(@RequestBody RegisterMembershipRequest request) {
         RegisterMembershipCommand command = RegisterMembershipCommand.builder()
                 .name(request.getName())
                 .address(request.getAddress())
@@ -26,6 +27,6 @@ public class RegisterMembershipController {
                 .isCorp(request.isCorp())
                 .build();
 
-        registerMembershipUseCase.registerMembership(command);
+        return registerMembershipUseCase.registerMembership(command);
     }
 }
