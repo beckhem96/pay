@@ -1,9 +1,9 @@
 package com.fastcampus.membership.adapter.in.web;
 
+import com.fastcampus.common.WebAdapter;
 import com.fastcampus.membership.application.port.in.ModifyMembershipCommand;
 import com.fastcampus.membership.application.port.in.ModifyMembershipUseCase;
 import com.fastcampus.membership.domain.Membership;
-import com.fastcampus.common.WebAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +18,9 @@ public class ModifyMembershipController {
 
     @PostMapping("/membership/modify")
     ResponseEntity<Membership> findMembershipByMemberId(@RequestBody ModifyMembershipRequest request) {
+        if ("error".equals(request.getName())) {
+            throw new RuntimeException("테스트용 런타임 에러가 발생했습니다!");
+        }
         ModifyMembershipCommand command = ModifyMembershipCommand.builder()
                 .membershipId(request.getMembershipId())
                 .name(request.getName())
@@ -26,7 +29,6 @@ public class ModifyMembershipController {
                 .isValid(request.isValid())
                 .isCorp(request.isCorp())
                 .build();
-
         return ResponseEntity.ok(modifyMembershipUseCase.modifyMembership(command));
     }
 }
