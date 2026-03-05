@@ -36,4 +36,6 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Stor
+
+CLAUDE.md
