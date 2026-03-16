@@ -26,7 +26,7 @@ public class FindMembershipControllerTest {
 
     @Test
     public void testFindMembership() throws Exception {
-        RegisterMembershipRequest registerRequest = new RegisterMembershipRequest("name", "email", "address", false);
+        RegisterMembershipRequest registerRequest = new RegisterMembershipRequest("name", "address", "email", false);
         mockMvc.perform(
                 MockMvcRequestBuilders.post("/membership/register")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -43,7 +43,7 @@ public class FindMembershipControllerTest {
         );
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/membership/{membershipId}", "2")
+                MockMvcRequestBuilders.get("/membership/{membershipId}", "1")
         )
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(mapper.writeValueAsString(expect)));

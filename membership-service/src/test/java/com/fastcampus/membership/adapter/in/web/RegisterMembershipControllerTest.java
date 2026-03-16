@@ -26,7 +26,7 @@ public class RegisterMembershipControllerTest {
 
     @Test
     public void testRegisterMembership() throws Exception {
-        RegisterMembershipRequest request = new RegisterMembershipRequest("name", "email", "address", false);
+        RegisterMembershipRequest request = new RegisterMembershipRequest("name", "address", "email", false);
         Membership expect = Membership.generateMember(
                 new Membership.MembershipId("1"),
                 new Membership.MembershipName("name"),
