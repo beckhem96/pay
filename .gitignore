@@ -39,3 +39,5 @@ bin/
 .DS_Stor
 
 CLAUDE.md
+# logx.txt
+/membership-service/logs.txt

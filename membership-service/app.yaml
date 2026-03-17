@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: membership-service
-          image: membership-service:v1 # 우리가 방금 구운 이미지 이름
+          image: membership-service:latest # 우리가 방금 구운 이미지 이름
           imagePullPolicy: Never # 🌟핵심: 도커 허브 가지 말고 Minikube 안에 있는 거 써라!
           ports:
             - containerPort: 8080
